@@ -954,6 +954,7 @@ class DatabaseTaskResultTestCase(TransactionTestCase):
         finally:
             new_connection.close()
 
+    @exclusive_transaction()
     def test_duplicate(self) -> None:
         result_1 = cast(TaskResult, test_tasks.calculate_meaning_of_life.enqueue())
         db_result_1 = result_1.db_result
