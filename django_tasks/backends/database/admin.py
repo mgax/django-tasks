@@ -26,11 +26,6 @@ class DBTaskResultAdmin(admin.ModelAdmin):
     ) -> bool:
         return False
 
-    def has_delete_permission(
-        self, request: HttpRequest, obj: Optional[DBTaskResult] = None
-    ) -> bool:
-        return False
-
     def has_change_permission(
         self, request: HttpRequest, obj: Optional[DBTaskResult] = None
     ) -> bool:
